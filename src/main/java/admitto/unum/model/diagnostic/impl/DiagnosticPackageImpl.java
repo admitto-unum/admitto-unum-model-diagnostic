@@ -14,8 +14,10 @@ import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticFactory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
 import admitto.unum.model.diagnostic.Name;
+import admitto.unum.model.diagnostic.Posting;
 import admitto.unum.model.diagnostic.QualifiedName;
 import admitto.unum.model.diagnostic.SimpleName;
+import admitto.unum.model.diagnostic.Whiteboard;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,6 +56,20 @@ public class DiagnosticPackageImpl
      * @generated
      */
     private EClass diagnosticCategoryEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass whiteboardEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass postingEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -264,6 +280,70 @@ public class DiagnosticPackageImpl
      * @generated
      */
     @Override
+    public EClass getWhiteboard() {
+        return whiteboardEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getWhiteboard_Postings() {
+        return (EReference) whiteboardEClass.getEStructuralFeatures()
+            .get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getPosting() {
+        return postingEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getPosting_Name() {
+        return (EReference) postingEClass.getEStructuralFeatures()
+            .get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getPosting_Id() {
+        return (EAttribute) postingEClass.getEStructuralFeatures()
+            .get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getPosting_Value() {
+        return (EAttribute) postingEClass.getEStructuralFeatures()
+            .get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public DiagnosticFactory getDiagnosticFactory() {
         return (DiagnosticFactory) getEFactoryInstance();
     }
@@ -304,6 +384,14 @@ public class DiagnosticPackageImpl
         createEReference(diagnosticCategoryEClass, DIAGNOSTIC_CATEGORY__CONDITION_NAME);
         createEReference(diagnosticCategoryEClass, DIAGNOSTIC_CATEGORY__CATEGORY_NAME);
         createEReference(diagnosticCategoryEClass, DIAGNOSTIC_CATEGORY__SPECIFICITY);
+
+        whiteboardEClass = createEClass(WHITEBOARD);
+        createEReference(whiteboardEClass, WHITEBOARD__POSTINGS);
+
+        postingEClass = createEClass(POSTING);
+        createEReference(postingEClass, POSTING__NAME);
+        createEAttribute(postingEClass, POSTING__ID);
+        createEAttribute(postingEClass, POSTING__VALUE);
     }
 
     /**
@@ -496,6 +584,79 @@ public class DiagnosticPackageImpl
                        IS_UNIQUE,
                        !IS_DERIVED,
                        IS_ORDERED);
+
+        initEClass(whiteboardEClass,
+                   Whiteboard.class,
+                   "Whiteboard",
+                   !IS_ABSTRACT,
+                   !IS_INTERFACE,
+                   IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getWhiteboard_Postings(),
+                       this.getPosting(),
+                       null,
+                       "postings",
+                       null,
+                       0,
+                       -1,
+                       Whiteboard.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       IS_COMPOSITE,
+                       !IS_RESOLVE_PROXIES,
+                       !IS_UNSETTABLE,
+                       IS_UNIQUE,
+                       !IS_DERIVED,
+                       IS_ORDERED);
+
+        initEClass(postingEClass, Posting.class, "Posting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getPosting_Name(),
+                       this.getName_(),
+                       null,
+                       "name",
+                       null,
+                       1,
+                       1,
+                       Posting.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       IS_COMPOSITE,
+                       !IS_RESOLVE_PROXIES,
+                       !IS_UNSETTABLE,
+                       IS_UNIQUE,
+                       !IS_DERIVED,
+                       IS_ORDERED);
+        initEAttribute(getPosting_Id(),
+                       ecorePackage.getEString(),
+                       "id",
+                       null,
+                       0,
+                       1,
+                       Posting.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       !IS_UNSETTABLE,
+                       IS_ID,
+                       !IS_UNIQUE,
+                       !IS_DERIVED,
+                       !IS_ORDERED);
+        initEAttribute(getPosting_Value(),
+                       ecorePackage.getEJavaObject(),
+                       "value",
+                       null,
+                       0,
+                       1,
+                       Posting.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       !IS_UNSETTABLE,
+                       !IS_ID,
+                       !IS_UNIQUE,
+                       !IS_DERIVED,
+                       !IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

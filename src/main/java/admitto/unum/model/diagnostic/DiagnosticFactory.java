@@ -52,6 +52,24 @@ public interface DiagnosticFactory
     DiagnosticCategory createDiagnosticCategory();
 
     /**
+     * Returns a new object of class '<em>Whiteboard</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Whiteboard</em>'.
+     * @generated
+     */
+    Whiteboard createWhiteboard();
+
+    /**
+     * Returns a new object of class '<em>Posting</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Posting</em>'.
+     * @generated
+     */
+    Posting createPosting();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

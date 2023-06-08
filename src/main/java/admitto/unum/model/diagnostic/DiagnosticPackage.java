@@ -292,6 +292,98 @@ public interface DiagnosticPackage
 
 
     /**
+     * The meta object id for the '{@link admitto.unum.model.diagnostic.impl.WhiteboardImpl <em>Whiteboard</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see admitto.unum.model.diagnostic.impl.WhiteboardImpl
+     * @see admitto.unum.model.diagnostic.impl.DiagnosticPackageImpl#getWhiteboard()
+     * @generated
+     */
+    int WHITEBOARD = 4;
+
+    /**
+     * The feature id for the '<em><b>Postings</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WHITEBOARD__POSTINGS = 0;
+
+    /**
+     * The number of structural features of the '<em>Whiteboard</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WHITEBOARD_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Whiteboard</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WHITEBOARD_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link admitto.unum.model.diagnostic.impl.PostingImpl <em>Posting</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see admitto.unum.model.diagnostic.impl.PostingImpl
+     * @see admitto.unum.model.diagnostic.impl.DiagnosticPackageImpl#getPosting()
+     * @generated
+     */
+    int POSTING = 5;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POSTING__NAME = 0;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POSTING__ID = 1;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POSTING__VALUE = 2;
+
+    /**
+     * The number of structural features of the '<em>Posting</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POSTING_FEATURE_COUNT = 3;
+
+    /**
+     * The number of operations of the '<em>Posting</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POSTING_OPERATION_COUNT = 0;
+
+    /**
      * Returns the meta object for class '{@link admitto.unum.model.diagnostic.Name <em>Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -429,6 +521,70 @@ public interface DiagnosticPackage
     EReference getDiagnosticCategory_Specificity();
 
     /**
+     * Returns the meta object for class '{@link admitto.unum.model.diagnostic.Whiteboard <em>Whiteboard</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Whiteboard</em>'.
+     * @see admitto.unum.model.diagnostic.Whiteboard
+     * @generated
+     */
+    EClass getWhiteboard();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link admitto.unum.model.diagnostic.Whiteboard#getPostings <em>Postings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Postings</em>'.
+     * @see admitto.unum.model.diagnostic.Whiteboard#getPostings()
+     * @see #getWhiteboard()
+     * @generated
+     */
+    EReference getWhiteboard_Postings();
+
+    /**
+     * Returns the meta object for class '{@link admitto.unum.model.diagnostic.Posting <em>Posting</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Posting</em>'.
+     * @see admitto.unum.model.diagnostic.Posting
+     * @generated
+     */
+    EClass getPosting();
+
+    /**
+     * Returns the meta object for the containment reference '{@link admitto.unum.model.diagnostic.Posting#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Name</em>'.
+     * @see admitto.unum.model.diagnostic.Posting#getName()
+     * @see #getPosting()
+     * @generated
+     */
+    EReference getPosting_Name();
+
+    /**
+     * Returns the meta object for the attribute '{@link admitto.unum.model.diagnostic.Posting#getId <em>Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Id</em>'.
+     * @see admitto.unum.model.diagnostic.Posting#getId()
+     * @see #getPosting()
+     * @generated
+     */
+    EAttribute getPosting_Id();
+
+    /**
+     * Returns the meta object for the attribute '{@link admitto.unum.model.diagnostic.Posting#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see admitto.unum.model.diagnostic.Posting#getValue()
+     * @see #getPosting()
+     * @generated
+     */
+    EAttribute getPosting_Value();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -562,6 +718,58 @@ public interface DiagnosticPackage
          * @generated
          */
         EReference DIAGNOSTIC_CATEGORY__SPECIFICITY = eINSTANCE.getDiagnosticCategory_Specificity();
+
+        /**
+         * The meta object literal for the '{@link admitto.unum.model.diagnostic.impl.WhiteboardImpl <em>Whiteboard</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see admitto.unum.model.diagnostic.impl.WhiteboardImpl
+         * @see admitto.unum.model.diagnostic.impl.DiagnosticPackageImpl#getWhiteboard()
+         * @generated
+         */
+        EClass WHITEBOARD = eINSTANCE.getWhiteboard();
+
+        /**
+         * The meta object literal for the '<em><b>Postings</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference WHITEBOARD__POSTINGS = eINSTANCE.getWhiteboard_Postings();
+
+        /**
+         * The meta object literal for the '{@link admitto.unum.model.diagnostic.impl.PostingImpl <em>Posting</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see admitto.unum.model.diagnostic.impl.PostingImpl
+         * @see admitto.unum.model.diagnostic.impl.DiagnosticPackageImpl#getPosting()
+         * @generated
+         */
+        EClass POSTING = eINSTANCE.getPosting();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference POSTING__NAME = eINSTANCE.getPosting_Name();
+
+        /**
+         * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute POSTING__ID = eINSTANCE.getPosting_Id();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute POSTING__VALUE = eINSTANCE.getPosting_Value();
 
     }
 

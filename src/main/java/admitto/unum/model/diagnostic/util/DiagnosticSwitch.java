@@ -10,8 +10,10 @@ import org.eclipse.emf.ecore.util.Switch;
 import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
 import admitto.unum.model.diagnostic.Name;
+import admitto.unum.model.diagnostic.Posting;
 import admitto.unum.model.diagnostic.QualifiedName;
 import admitto.unum.model.diagnostic.SimpleName;
+import admitto.unum.model.diagnostic.Whiteboard;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,6 +106,20 @@ public class DiagnosticSwitch<T>
                     result = defaultCase(theEObject);
                 return result;
             }
+            case DiagnosticPackage.WHITEBOARD: {
+                Whiteboard whiteboard = (Whiteboard) theEObject;
+                T result = caseWhiteboard(whiteboard);
+                if (result == null)
+                    result = defaultCase(theEObject);
+                return result;
+            }
+            case DiagnosticPackage.POSTING: {
+                Posting posting = (Posting) theEObject;
+                T result = casePosting(posting);
+                if (result == null)
+                    result = defaultCase(theEObject);
+                return result;
+            }
             default:
                 return defaultCase(theEObject);
         }
@@ -166,6 +182,36 @@ public class DiagnosticSwitch<T>
      * @generated
      */
     public T caseDiagnosticCategory(DiagnosticCategory object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Whiteboard</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Whiteboard</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseWhiteboard(Whiteboard object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Posting</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Posting</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T casePosting(Posting object) {
         return null;
     }
 

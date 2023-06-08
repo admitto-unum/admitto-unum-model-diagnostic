@@ -32,4 +32,16 @@
         eType="#//SimpleName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specificity" eType="#//QualifiedName"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Whiteboard">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postings" upperBound="-1"
+        eType="#//Posting" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Posting">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Name"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
 </ecore:EPackage>

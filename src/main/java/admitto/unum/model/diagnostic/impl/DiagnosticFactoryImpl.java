@@ -12,8 +12,10 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticFactory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
+import admitto.unum.model.diagnostic.Posting;
 import admitto.unum.model.diagnostic.QualifiedName;
 import admitto.unum.model.diagnostic.SimpleName;
+import admitto.unum.model.diagnostic.Whiteboard;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,6 +70,10 @@ public class DiagnosticFactoryImpl
                 return createQualifiedName();
             case DiagnosticPackage.DIAGNOSTIC_CATEGORY:
                 return createDiagnosticCategory();
+            case DiagnosticPackage.WHITEBOARD:
+                return createWhiteboard();
+            case DiagnosticPackage.POSTING:
+                return createPosting();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -104,6 +110,28 @@ public class DiagnosticFactoryImpl
     public DiagnosticCategory createDiagnosticCategory() {
         DiagnosticCategoryImpl diagnosticCategory = new DiagnosticCategoryImpl();
         return diagnosticCategory;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Whiteboard createWhiteboard() {
+        WhiteboardImpl whiteboard = new WhiteboardImpl();
+        return whiteboard;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Posting createPosting() {
+        PostingImpl posting = new PostingImpl();
+        return posting;
     }
 
     /**

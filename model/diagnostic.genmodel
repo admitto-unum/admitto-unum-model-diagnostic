@@ -26,5 +26,13 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagnostic.ecore#//DiagnosticCategory/categoryName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagnostic.ecore#//DiagnosticCategory/specificity"/>
     </genClasses>
+    <genClasses ecoreClass="diagnostic.ecore#//Whiteboard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagnostic.ecore#//Whiteboard/postings"/>
+    </genClasses>
+    <genClasses ecoreClass="diagnostic.ecore#//Posting">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagnostic.ecore#//Posting/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagnostic.ecore#//Posting/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagnostic.ecore#//Posting/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -11,8 +11,10 @@ import org.eclipse.emf.ecore.EObject;
 import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
 import admitto.unum.model.diagnostic.Name;
+import admitto.unum.model.diagnostic.Posting;
 import admitto.unum.model.diagnostic.QualifiedName;
 import admitto.unum.model.diagnostic.SimpleName;
+import admitto.unum.model.diagnostic.Whiteboard;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,6 +94,16 @@ public class DiagnosticAdapterFactory
         }
 
         @Override
+        public Adapter caseWhiteboard(Whiteboard object) {
+            return createWhiteboardAdapter();
+        }
+
+        @Override
+        public Adapter casePosting(Posting object) {
+            return createPostingAdapter();
+        }
+
+        @Override
         public Adapter defaultCase(EObject object) {
             return createEObjectAdapter();
         }
@@ -164,6 +176,34 @@ public class DiagnosticAdapterFactory
      * @generated
      */
     public Adapter createDiagnosticCategoryAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link admitto.unum.model.diagnostic.Whiteboard <em>Whiteboard</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see admitto.unum.model.diagnostic.Whiteboard
+     * @generated
+     */
+    public Adapter createWhiteboardAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link admitto.unum.model.diagnostic.Posting <em>Posting</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see admitto.unum.model.diagnostic.Posting
+     * @generated
+     */
+    public Adapter createPostingAdapter() {
         return null;
     }
 
