@@ -1,0 +1,4 @@
+admitto.unum.model.diagnostic
+admitto.unum.model.diagnostic.impl
+admitto.unum.model.diagnostic.parsers
+admitto.unum.model.diagnostic.util

@@ -15,7 +15,7 @@ public class NameParser {
 
     /**
      * Parse a string containing name tokens possibly delimited by a dot (.).
-     * 
+     *
      * @param source Source containing identifier or a list of identifiers separated by a dot.
      * @return New {@link Name} instance.
      */

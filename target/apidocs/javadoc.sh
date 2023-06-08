@@ -1,0 +1,1 @@
+/home/admitone/.sdkman/candidates/java/22.3.r19-grl/bin/javadoc -J--add-exports=jdk.javadoc/jdk.javadoc.internal.tool=ALL-UNNAMED -J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --enable-preview @options @argfile

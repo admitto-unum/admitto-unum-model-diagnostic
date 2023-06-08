@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <docletArtifacts>
+    <docletArtifact />
+    <docletArtifact>
+      <groupId>org.jdrupes.mdoclet</groupId>
+      <artifactId>doclet</artifactId>
+      <version>3.1.0</version>
+    </docletArtifact>
+    <docletArtifact>
+      <groupId>com.vladsch.flexmark</groupId>
+      <artifactId>flexmark-all</artifactId>
+      <version>0.64.0</version>
+    </docletArtifact>
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <excludePackageNames>
+    <excludePackageName>*.internal.*</excludePackageName>
+  </excludePackageNames>
+  <docfilesSubdirsUsed>true</docfilesSubdirsUsed>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>
