@@ -1,0 +1,202 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>admitto.unum</groupId>
+        <artifactId>admitto-unum-base-pom</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+        <relativePath></relativePath>
+    </parent>
+
+    <groupId>admitto.unum.model</groupId>
+    <artifactId>admitto-unum-model-diagnostic</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>admitto.unum.model.diagnostic</name>
+
+    <properties>
+        <java.version>19</java.version>
+        <log4j2.version>2.17.1</log4j2.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!--
+        https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore</artifactId>
+            <version>2.34.0</version>
+        </dependency>
+
+        <!--
+        https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.common -->
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.common</artifactId>
+            <version>2.28.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.collections</groupId>
+            <artifactId>eclipse-collections</artifactId>
+            <version>8.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>0.10.4</version>
+        </dependency>
+
+        <!-- Testing Framework -->
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>admitto.unum.route66</groupId>
+            <artifactId>route66-expressive-java-assert</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Code Quality Analysis -->
+        <dependency>
+            <groupId>admitto.unum.route66.tools</groupId>
+            <artifactId>route66-code-quality</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-surefire-plugin</artifactId>
+                  <executions>
+                    <execution>
+                      <goals>
+                        <goal>test</goal>
+                      </goals>
+                      <phase>itegration-test</phase>
+                      <configuration>
+                        <systemProperties />
+                        <includes>
+                          <include>**/*_Spec.java</include>
+                          <include>**/*Test.java</include>
+                        </includes>
+                      </configuration>
+                    </execution>
+                  </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+
+            <!-- http://joel-costigliola.github.io/assertj/assertj-assertions-generator-maven-plugin.html -->
+            <!-- mvn assertj:generate-assertions -->
+            <plugin>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+                <configuration>
+                    <hierarchical>true</hierarchical>
+                    <classes>
+                        <param>admitto.unum.route66.functional.either.Either</param>
+                        <param>admitto.unum.route66.functional.maybe.Maybe</param>
+                        <param>admitto.unum.route66.functional.outcome.Outcome</param>
+                    </classes>
+                </configuration>
+            </plugin>
+
+            <!-- Create Standard Build Reports -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                      <port>7000</port>
+                      <tempWebappDirectory>${basedir}/target/site/tempdir</tempWebappDirectory>
+                </configuration>
+            </plugin>    
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
+            <!-- Generate UML diagrams from PlantUML source -->
+            <plugin>
+                <groupId>admitto.unum.route66.tools</groupId>
+                <artifactId>route66-plantuml-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
