@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticFactory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
 import admitto.unum.model.diagnostic.Name;
@@ -46,6 +47,13 @@ public class DiagnosticPackageImpl
      * @generated
      */
     private EClass qualifiedNameEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass diagnosticCategoryEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -202,6 +210,60 @@ public class DiagnosticPackageImpl
      * @generated
      */
     @Override
+    public EReference getQualifiedName_QualifiednameeOpposite() {
+        return (EReference) qualifiedNameEClass.getEStructuralFeatures()
+            .get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getDiagnosticCategory() {
+        return diagnosticCategoryEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getDiagnosticCategory_ConditionName() {
+        return (EReference) diagnosticCategoryEClass.getEStructuralFeatures()
+            .get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getDiagnosticCategory_CategoryName() {
+        return (EReference) diagnosticCategoryEClass.getEStructuralFeatures()
+            .get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getDiagnosticCategory_Specificity() {
+        return (EReference) diagnosticCategoryEClass.getEStructuralFeatures()
+            .get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public DiagnosticFactory getDiagnosticFactory() {
         return (DiagnosticFactory) getEFactoryInstance();
     }
@@ -236,6 +298,12 @@ public class DiagnosticPackageImpl
         qualifiedNameEClass = createEClass(QUALIFIED_NAME);
         createEReference(qualifiedNameEClass, QUALIFIED_NAME__NAME);
         createEReference(qualifiedNameEClass, QUALIFIED_NAME__QUALIFIER);
+        createEReference(qualifiedNameEClass, QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE);
+
+        diagnosticCategoryEClass = createEClass(DIAGNOSTIC_CATEGORY);
+        createEReference(diagnosticCategoryEClass, DIAGNOSTIC_CATEGORY__CONDITION_NAME);
+        createEReference(diagnosticCategoryEClass, DIAGNOSTIC_CATEGORY__CATEGORY_NAME);
+        createEReference(diagnosticCategoryEClass, DIAGNOSTIC_CATEGORY__SPECIFICITY);
     }
 
     /**
@@ -338,7 +406,7 @@ public class DiagnosticPackageImpl
                        IS_ORDERED);
         initEReference(getQualifiedName_Qualifier(),
                        this.getQualifiedName(),
-                       null,
+                       this.getQualifiedName_QualifiednameeOpposite(),
                        "qualifier",
                        null,
                        0,
@@ -347,8 +415,83 @@ public class DiagnosticPackageImpl
                        !IS_TRANSIENT,
                        !IS_VOLATILE,
                        IS_CHANGEABLE,
-                       IS_COMPOSITE,
-                       !IS_RESOLVE_PROXIES,
+                       !IS_COMPOSITE,
+                       IS_RESOLVE_PROXIES,
+                       !IS_UNSETTABLE,
+                       IS_UNIQUE,
+                       !IS_DERIVED,
+                       IS_ORDERED);
+        initEReference(getQualifiedName_QualifiednameeOpposite(),
+                       this.getQualifiedName(),
+                       this.getQualifiedName_Qualifier(),
+                       "qualifiednameeOpposite",
+                       null,
+                       0,
+                       1,
+                       QualifiedName.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       !IS_COMPOSITE,
+                       IS_RESOLVE_PROXIES,
+                       !IS_UNSETTABLE,
+                       IS_UNIQUE,
+                       !IS_DERIVED,
+                       IS_ORDERED);
+
+        initEClass(diagnosticCategoryEClass,
+                   DiagnosticCategory.class,
+                   "DiagnosticCategory",
+                   !IS_ABSTRACT,
+                   !IS_INTERFACE,
+                   IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getDiagnosticCategory_ConditionName(),
+                       this.getSimpleName(),
+                       null,
+                       "conditionName",
+                       null,
+                       1,
+                       1,
+                       DiagnosticCategory.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       !IS_COMPOSITE,
+                       IS_RESOLVE_PROXIES,
+                       !IS_UNSETTABLE,
+                       IS_UNIQUE,
+                       !IS_DERIVED,
+                       IS_ORDERED);
+        initEReference(getDiagnosticCategory_CategoryName(),
+                       this.getSimpleName(),
+                       null,
+                       "categoryName",
+                       null,
+                       1,
+                       1,
+                       DiagnosticCategory.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       !IS_COMPOSITE,
+                       IS_RESOLVE_PROXIES,
+                       !IS_UNSETTABLE,
+                       IS_UNIQUE,
+                       !IS_DERIVED,
+                       IS_ORDERED);
+        initEReference(getDiagnosticCategory_Specificity(),
+                       this.getQualifiedName(),
+                       null,
+                       "specificity",
+                       null,
+                       0,
+                       1,
+                       DiagnosticCategory.class,
+                       !IS_TRANSIENT,
+                       !IS_VOLATILE,
+                       IS_CHANGEABLE,
+                       !IS_COMPOSITE,
+                       IS_RESOLVE_PROXIES,
                        !IS_UNSETTABLE,
                        IS_UNIQUE,
                        !IS_DERIVED,

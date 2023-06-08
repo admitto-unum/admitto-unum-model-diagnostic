@@ -43,6 +43,15 @@ public interface DiagnosticFactory
     QualifiedName createQualifiedName();
 
     /**
+     * Returns a new object of class '<em>Category</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Category</em>'.
+     * @generated
+     */
+    DiagnosticCategory createDiagnosticCategory();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

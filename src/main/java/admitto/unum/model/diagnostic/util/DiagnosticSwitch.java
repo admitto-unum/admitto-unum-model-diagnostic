@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
 import admitto.unum.model.diagnostic.Name;
 import admitto.unum.model.diagnostic.QualifiedName;
@@ -96,6 +97,13 @@ public class DiagnosticSwitch<T>
                     result = defaultCase(theEObject);
                 return result;
             }
+            case DiagnosticPackage.DIAGNOSTIC_CATEGORY: {
+                DiagnosticCategory diagnosticCategory = (DiagnosticCategory) theEObject;
+                T result = caseDiagnosticCategory(diagnosticCategory);
+                if (result == null)
+                    result = defaultCase(theEObject);
+                return result;
+            }
             default:
                 return defaultCase(theEObject);
         }
@@ -143,6 +151,21 @@ public class DiagnosticSwitch<T>
      * @generated
      */
     public T caseQualifiedName(QualifiedName object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Category</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Category</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDiagnosticCategory(DiagnosticCategory object) {
         return null;
     }
 

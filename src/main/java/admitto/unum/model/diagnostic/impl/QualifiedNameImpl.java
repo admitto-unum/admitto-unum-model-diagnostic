@@ -27,6 +27,7 @@ import admitto.unum.model.diagnostic.SimpleName;
  * <ul>
  *   <li>{@link admitto.unum.model.diagnostic.impl.QualifiedNameImpl#getName <em>Name</em>}</li>
  *   <li>{@link admitto.unum.model.diagnostic.impl.QualifiedNameImpl#getQualifier <em>Qualifier</em>}</li>
+ *   <li>{@link admitto.unum.model.diagnostic.impl.QualifiedNameImpl#getQualifiednameeOpposite <em>Qualifiednamee Opposite</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,7 +47,7 @@ public class QualifiedNameImpl
     protected SimpleName name;
 
     /**
-     * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' containment reference.
+     * The cached value of the '{@link #getQualifier() <em>Qualifier</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getQualifier()
@@ -54,6 +55,16 @@ public class QualifiedNameImpl
      * @ordered
      */
     protected QualifiedName qualifier;
+
+    /**
+     * The cached value of the '{@link #getQualifiednameeOpposite() <em>Qualifiednamee Opposite</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getQualifiednameeOpposite()
+     * @generated
+     * @ordered
+     */
+    protected QualifiedName qualifiednameeOpposite;
 
     /**
      * <!-- begin-user-doc -->
@@ -141,6 +152,28 @@ public class QualifiedNameImpl
      */
     @Override
     public QualifiedName getQualifier() {
+        if (qualifier != null && qualifier.eIsProxy()) {
+            InternalEObject oldQualifier = (InternalEObject) qualifier;
+            qualifier = (QualifiedName) eResolveProxy(oldQualifier);
+            if (qualifier != oldQualifier) {
+                if (eNotificationRequired())
+                    eNotify(new ENotificationImpl(
+                            this,
+                                Notification.RESOLVE,
+                                DiagnosticPackage.QUALIFIED_NAME__QUALIFIER,
+                                oldQualifier,
+                                qualifier));
+            }
+        }
+        return qualifier;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public QualifiedName basicGetQualifier() {
         return qualifier;
     }
 
@@ -179,14 +212,14 @@ public class QualifiedNameImpl
             if (qualifier != null)
                 msgs = ((InternalEObject) qualifier)
                     .eInverseRemove(this,
-                                    EOPPOSITE_FEATURE_BASE - DiagnosticPackage.QUALIFIED_NAME__QUALIFIER,
-                                    null,
+                                    DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE,
+                                    QualifiedName.class,
                                     msgs);
             if (newQualifier != null)
                 msgs = ((InternalEObject) newQualifier)
                     .eInverseAdd(this,
-                                 EOPPOSITE_FEATURE_BASE - DiagnosticPackage.QUALIFIED_NAME__QUALIFIER,
-                                 null,
+                                 DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE,
+                                 QualifiedName.class,
                                  msgs);
             msgs = basicSetQualifier(newQualifier, msgs);
             if (msgs != null)
@@ -198,6 +231,89 @@ public class QualifiedNameImpl
                         DiagnosticPackage.QUALIFIED_NAME__QUALIFIER,
                         newQualifier,
                         newQualifier));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public QualifiedName getQualifiednameeOpposite() {
+        if (qualifiednameeOpposite != null && qualifiednameeOpposite.eIsProxy()) {
+            InternalEObject oldQualifiednameeOpposite = (InternalEObject) qualifiednameeOpposite;
+            qualifiednameeOpposite = (QualifiedName) eResolveProxy(oldQualifiednameeOpposite);
+            if (qualifiednameeOpposite != oldQualifiednameeOpposite) {
+                if (eNotificationRequired())
+                    eNotify(new ENotificationImpl(
+                            this,
+                                Notification.RESOLVE,
+                                DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE,
+                                oldQualifiednameeOpposite,
+                                qualifiednameeOpposite));
+            }
+        }
+        return qualifiednameeOpposite;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public QualifiedName basicGetQualifiednameeOpposite() {
+        return qualifiednameeOpposite;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetQualifiednameeOpposite(QualifiedName newQualifiednameeOpposite,
+        NotificationChain msgs) {
+        QualifiedName oldQualifiednameeOpposite = qualifiednameeOpposite;
+        qualifiednameeOpposite = newQualifiednameeOpposite;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(
+                    this,
+                        Notification.SET,
+                        DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE,
+                        oldQualifiednameeOpposite,
+                        newQualifiednameeOpposite);
+            if (msgs == null)
+                msgs = notification;
+            else
+                msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setQualifiednameeOpposite(QualifiedName newQualifiednameeOpposite) {
+        if (newQualifiednameeOpposite != qualifiednameeOpposite) {
+            NotificationChain msgs = null;
+            if (qualifiednameeOpposite != null)
+                msgs = ((InternalEObject) qualifiednameeOpposite)
+                    .eInverseRemove(this, DiagnosticPackage.QUALIFIED_NAME__QUALIFIER, QualifiedName.class, msgs);
+            if (newQualifiednameeOpposite != null)
+                msgs = ((InternalEObject) newQualifiednameeOpposite)
+                    .eInverseAdd(this, DiagnosticPackage.QUALIFIED_NAME__QUALIFIER, QualifiedName.class, msgs);
+            msgs = basicSetQualifiednameeOpposite(newQualifiednameeOpposite, msgs);
+            if (msgs != null)
+                msgs.dispatch();
+        } else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(
+                    this,
+                        Notification.SET,
+                        DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE,
+                        newQualifiednameeOpposite,
+                        newQualifiednameeOpposite));
     }
 
     /**
@@ -226,12 +342,40 @@ public class QualifiedNameImpl
      * @generated
      */
     @Override
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+        switch (featureID) {
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIER:
+                if (qualifier != null)
+                    msgs = ((InternalEObject) qualifier)
+                        .eInverseRemove(this,
+                                        DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE,
+                                        QualifiedName.class,
+                                        msgs);
+                return basicSetQualifier((QualifiedName) otherEnd, msgs);
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE:
+                if (qualifiednameeOpposite != null)
+                    msgs = ((InternalEObject) qualifiednameeOpposite)
+                        .eInverseRemove(this, DiagnosticPackage.QUALIFIED_NAME__QUALIFIER, QualifiedName.class, msgs);
+                return basicSetQualifiednameeOpposite((QualifiedName) otherEnd, msgs);
+            default:
+                return super.eInverseAdd(otherEnd, featureID, msgs);
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
             case DiagnosticPackage.QUALIFIED_NAME__NAME:
                 return basicSetName(null, msgs);
             case DiagnosticPackage.QUALIFIED_NAME__QUALIFIER:
                 return basicSetQualifier(null, msgs);
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE:
+                return basicSetQualifiednameeOpposite(null, msgs);
             default:
                 return super.eInverseRemove(otherEnd, featureID, msgs);
         }
@@ -248,7 +392,13 @@ public class QualifiedNameImpl
             case DiagnosticPackage.QUALIFIED_NAME__NAME:
                 return getName();
             case DiagnosticPackage.QUALIFIED_NAME__QUALIFIER:
-                return getQualifier();
+                if (resolve)
+                    return getQualifier();
+                return basicGetQualifier();
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE:
+                if (resolve)
+                    return getQualifiednameeOpposite();
+                return basicGetQualifiednameeOpposite();
             default:
                 return super.eGet(featureID, resolve, coreType);
         }
@@ -267,6 +417,9 @@ public class QualifiedNameImpl
                 return;
             case DiagnosticPackage.QUALIFIED_NAME__QUALIFIER:
                 setQualifier((QualifiedName) newValue);
+                return;
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE:
+                setQualifiednameeOpposite((QualifiedName) newValue);
                 return;
             default:
                 super.eSet(featureID, newValue);
@@ -288,6 +441,9 @@ public class QualifiedNameImpl
             case DiagnosticPackage.QUALIFIED_NAME__QUALIFIER:
                 setQualifier((QualifiedName) null);
                 return;
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE:
+                setQualifiednameeOpposite((QualifiedName) null);
+                return;
             default:
                 super.eUnset(featureID);
                 return;
@@ -306,6 +462,8 @@ public class QualifiedNameImpl
                 return name != null;
             case DiagnosticPackage.QUALIFIED_NAME__QUALIFIER:
                 return qualifier != null;
+            case DiagnosticPackage.QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE:
+                return qualifiednameeOpposite != null;
             default:
                 return super.eIsSet(featureID);
         }

@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"admitto.unum.model.diagnostic"},{"l":"admitto.unum.model.diagnostic.impl"},{"l":"admitto.unum.model.diagnostic.parsers"},{"l":"admitto.unum.model.diagnostic.util"},{"l":"All Packages","u":"allpackages-index.html"}];updateSearchResults();

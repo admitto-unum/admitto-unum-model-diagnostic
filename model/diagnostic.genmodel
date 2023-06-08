@@ -19,6 +19,12 @@
     <genClasses ecoreClass="diagnostic.ecore#//QualifiedName">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagnostic.ecore#//QualifiedName/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagnostic.ecore#//QualifiedName/qualifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagnostic.ecore#//QualifiedName/qualifiednameeOpposite"/>
+    </genClasses>
+    <genClasses ecoreClass="diagnostic.ecore#//DiagnosticCategory">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagnostic.ecore#//DiagnosticCategory/conditionName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagnostic.ecore#//DiagnosticCategory/categoryName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagnostic.ecore#//DiagnosticCategory/specificity"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

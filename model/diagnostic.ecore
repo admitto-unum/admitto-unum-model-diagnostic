@@ -21,10 +21,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//SimpleName"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifier" eType="#//QualifiedName"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Return the superior name of this name.  If this instance does not have a superior name (i.e. it's the base name) then this reference is a null.&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eOpposite="#//QualifiedName/qualifiednameeOpposite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiednameeOpposite"
+        eType="#//QualifiedName" eOpposite="#//QualifiedName/qualifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagnosticCategory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionName" lowerBound="1"
+        eType="#//SimpleName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categoryName" lowerBound="1"
+        eType="#//SimpleName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificity" eType="#//QualifiedName"/>
   </eClassifiers>
 </ecore:EPackage>

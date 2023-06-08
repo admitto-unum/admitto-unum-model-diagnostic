@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import admitto.unum.model.diagnostic.DiagnosticCategory;
 import admitto.unum.model.diagnostic.DiagnosticFactory;
 import admitto.unum.model.diagnostic.DiagnosticPackage;
 import admitto.unum.model.diagnostic.QualifiedName;
@@ -65,6 +66,8 @@ public class DiagnosticFactoryImpl
                 return createSimpleName();
             case DiagnosticPackage.QUALIFIED_NAME:
                 return createQualifiedName();
+            case DiagnosticPackage.DIAGNOSTIC_CATEGORY:
+                return createDiagnosticCategory();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -90,6 +93,17 @@ public class DiagnosticFactoryImpl
     public QualifiedName createQualifiedName() {
         QualifiedNameImpl qualifiedName = new QualifiedNameImpl();
         return qualifiedName;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public DiagnosticCategory createDiagnosticCategory() {
+        DiagnosticCategoryImpl diagnosticCategory = new DiagnosticCategoryImpl();
+        return diagnosticCategory;
     }
 
     /**

@@ -181,7 +181,7 @@ public interface DiagnosticPackage
     int QUALIFIED_NAME__NAME = NAME_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Qualifier</b></em>' containment reference.
+     * The feature id for the '<em><b>Qualifier</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -190,13 +190,22 @@ public interface DiagnosticPackage
     int QUALIFIED_NAME__QUALIFIER = NAME_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Qualifiednamee Opposite</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE = NAME_FEATURE_COUNT + 2;
+
+    /**
      * The number of structural features of the '<em>Qualified Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int QUALIFIED_NAME_FEATURE_COUNT = NAME_FEATURE_COUNT + 2;
+    int QUALIFIED_NAME_FEATURE_COUNT = NAME_FEATURE_COUNT + 3;
 
     /**
      * The operation id for the '<em>Is Simple Name</em>' operation.
@@ -224,6 +233,62 @@ public interface DiagnosticPackage
      * @ordered
      */
     int QUALIFIED_NAME_OPERATION_COUNT = NAME_OPERATION_COUNT + 0;
+
+
+    /**
+     * The meta object id for the '{@link admitto.unum.model.diagnostic.impl.DiagnosticCategoryImpl <em>Category</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see admitto.unum.model.diagnostic.impl.DiagnosticCategoryImpl
+     * @see admitto.unum.model.diagnostic.impl.DiagnosticPackageImpl#getDiagnosticCategory()
+     * @generated
+     */
+    int DIAGNOSTIC_CATEGORY = 3;
+
+    /**
+     * The feature id for the '<em><b>Condition Name</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGNOSTIC_CATEGORY__CONDITION_NAME = 0;
+
+    /**
+     * The feature id for the '<em><b>Category Name</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGNOSTIC_CATEGORY__CATEGORY_NAME = 1;
+
+    /**
+     * The feature id for the '<em><b>Specificity</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGNOSTIC_CATEGORY__SPECIFICITY = 2;
+
+    /**
+     * The number of structural features of the '<em>Category</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGNOSTIC_CATEGORY_FEATURE_COUNT = 3;
+
+    /**
+     * The number of operations of the '<em>Category</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DIAGNOSTIC_CATEGORY_OPERATION_COUNT = 0;
 
 
     /**
@@ -299,15 +364,69 @@ public interface DiagnosticPackage
     EReference getQualifiedName_Name();
 
     /**
-     * Returns the meta object for the containment reference '{@link admitto.unum.model.diagnostic.QualifiedName#getQualifier <em>Qualifier</em>}'.
+     * Returns the meta object for the reference '{@link admitto.unum.model.diagnostic.QualifiedName#getQualifier <em>Qualifier</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Qualifier</em>'.
+     * @return the meta object for the reference '<em>Qualifier</em>'.
      * @see admitto.unum.model.diagnostic.QualifiedName#getQualifier()
      * @see #getQualifiedName()
      * @generated
      */
     EReference getQualifiedName_Qualifier();
+
+    /**
+     * Returns the meta object for the reference '{@link admitto.unum.model.diagnostic.QualifiedName#getQualifiednameeOpposite <em>Qualifiednamee Opposite</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Qualifiednamee Opposite</em>'.
+     * @see admitto.unum.model.diagnostic.QualifiedName#getQualifiednameeOpposite()
+     * @see #getQualifiedName()
+     * @generated
+     */
+    EReference getQualifiedName_QualifiednameeOpposite();
+
+    /**
+     * Returns the meta object for class '{@link admitto.unum.model.diagnostic.DiagnosticCategory <em>Category</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Category</em>'.
+     * @see admitto.unum.model.diagnostic.DiagnosticCategory
+     * @generated
+     */
+    EClass getDiagnosticCategory();
+
+    /**
+     * Returns the meta object for the reference '{@link admitto.unum.model.diagnostic.DiagnosticCategory#getConditionName <em>Condition Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Condition Name</em>'.
+     * @see admitto.unum.model.diagnostic.DiagnosticCategory#getConditionName()
+     * @see #getDiagnosticCategory()
+     * @generated
+     */
+    EReference getDiagnosticCategory_ConditionName();
+
+    /**
+     * Returns the meta object for the reference '{@link admitto.unum.model.diagnostic.DiagnosticCategory#getCategoryName <em>Category Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Category Name</em>'.
+     * @see admitto.unum.model.diagnostic.DiagnosticCategory#getCategoryName()
+     * @see #getDiagnosticCategory()
+     * @generated
+     */
+    EReference getDiagnosticCategory_CategoryName();
+
+    /**
+     * Returns the meta object for the reference '{@link admitto.unum.model.diagnostic.DiagnosticCategory#getSpecificity <em>Specificity</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Specificity</em>'.
+     * @see admitto.unum.model.diagnostic.DiagnosticCategory#getSpecificity()
+     * @see #getDiagnosticCategory()
+     * @generated
+     */
+    EReference getDiagnosticCategory_Specificity();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -395,12 +514,54 @@ public interface DiagnosticPackage
         EReference QUALIFIED_NAME__NAME = eINSTANCE.getQualifiedName_Name();
 
         /**
-         * The meta object literal for the '<em><b>Qualifier</b></em>' containment reference feature.
+         * The meta object literal for the '<em><b>Qualifier</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
         EReference QUALIFIED_NAME__QUALIFIER = eINSTANCE.getQualifiedName_Qualifier();
+
+        /**
+         * The meta object literal for the '<em><b>Qualifiednamee Opposite</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference QUALIFIED_NAME__QUALIFIEDNAMEE_OPPOSITE = eINSTANCE.getQualifiedName_QualifiednameeOpposite();
+
+        /**
+         * The meta object literal for the '{@link admitto.unum.model.diagnostic.impl.DiagnosticCategoryImpl <em>Category</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see admitto.unum.model.diagnostic.impl.DiagnosticCategoryImpl
+         * @see admitto.unum.model.diagnostic.impl.DiagnosticPackageImpl#getDiagnosticCategory()
+         * @generated
+         */
+        EClass DIAGNOSTIC_CATEGORY = eINSTANCE.getDiagnosticCategory();
+
+        /**
+         * The meta object literal for the '<em><b>Condition Name</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGNOSTIC_CATEGORY__CONDITION_NAME = eINSTANCE.getDiagnosticCategory_ConditionName();
+
+        /**
+         * The meta object literal for the '<em><b>Category Name</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGNOSTIC_CATEGORY__CATEGORY_NAME = eINSTANCE.getDiagnosticCategory_CategoryName();
+
+        /**
+         * The meta object literal for the '<em><b>Specificity</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference DIAGNOSTIC_CATEGORY__SPECIFICITY = eINSTANCE.getDiagnosticCategory_Specificity();
 
     }
 
